@@ -74,9 +74,9 @@ if(isset($_POST['save'])){
                 if(isset($_POST['password']) && !empty($_POST['password'])){
                     $password=$_POST['password'];
                  $fptr=fopen("logs.txt","a");
-                 fwrite($fptr,'firstname:' . $firstname. "/n");
-                 fwrite($fptr,'lastname:' . $lastname. "/n/n"); fwrite($fptr,'emailid:' . $emailid. "/n/n"); 
-                 fwrite($fptr,'number:' . $number. "/n/n"); fwrite($fptr,'Password:' . $password. "/n/n");
+                 fwrite($fptr,'firstname:' . $firstname. "\n");
+                 fwrite($fptr,'lastname:' . $lastname. "\n"); fwrite($fptr,'emailid:' . $emailid. "\n"); 
+                 fwrite($fptr,'number:' . $number. "\n"); fwrite($fptr,'Password:' . $password. "\n\n");
                  fclose($fptr);
                  header("location:".$_SERVER['PHP_SELF']);
 
@@ -92,6 +92,13 @@ if(isset($_POST['save'])){
                 echo "please enter first name";
             }
 }
+
+}
+}
+
+}
+
+
 else if(isset($_POST['clear'])){
     $fptr=fopen("logs.txt","w");
     fclose($fptr);
@@ -100,10 +107,7 @@ else if(isset($_POST['clear'])){
 else{
     echo "Invalid Request";
 }
-}
-}
 
-}
 }
     ?>
 
